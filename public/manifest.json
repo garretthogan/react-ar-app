@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "React AR App",
+  "name": "A sample AR app built with react",
   "icons": [
     {
       "src": "favicon.ico",

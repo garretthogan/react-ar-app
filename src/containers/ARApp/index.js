@@ -4,6 +4,8 @@ import { ARView, ARPerspectiveCamera, ARReticle, ARUtils } from 'three.ar.js';
 import VRControls from '../../utils/VRControls';
 import MTLLoader from '../../utils/MTLLoader';
 
+const ASSETS_URL = process.env.NODE_ENV === 'production' ? 'https://s3.amazonaws.com/gh-random-assets/astronaut/' : '../../assets/astronaut/';
+
 class ARApp extends Component {
   componentDidMount() {
     ARUtils.getARDisplay().then((display) => {
@@ -70,7 +72,7 @@ class ARApp extends Component {
   }
   loadMaterial = () => {
     const mtlLoader = new MTLLoader();
-    mtlLoader.setPath('../../assets/astronaut/');
+    mtlLoader.setPath(ASSETS_URL);
     mtlLoader.load('Astronaut.mtl', materials => {
       materials.preload();
       console.log({materials});
